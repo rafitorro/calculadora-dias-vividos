@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Días Vividos Online Gratis</title>
+  <h1>Calculadora de Días Vividos</h1>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      width: 80%;
+    }
+
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Calculadora de Edad</h1>
+
+  <p>Calcula tu edad exacta online gratis introduciendo tu fecha de nacimiento.</p>
+
+  <input type="date" id="fecha">
+
+  <button onclick="calcularEdad()">Calcular Edad</button>
+
+  <h2 id="resultado"></h2>
+
+  <p>Esta herramienta es rápida, gratuita y fácil de usar para saber tu edad en segundos.</p>
+</div>
+
+<script>
+function calcularEdad() {
+  const fecha = document.getElementById("fecha").value;
+
+  if (!fecha) {
+    document.getElementById("resultado").innerText = "Introduce una fecha.";
+    return;
+  }
+
+  const hoy = new Date();
+  const nacimiento = new Date(fecha);
+
+  const diferencia = hoy - nacimiento;
+  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+  document.getElementById("resultado").innerText = "Has vivido " + dias + " días.";
+}
+</script>
+
+</body>
+</html>
+
+<p>Calcula cuántos días has vivido de forma rápida y gratuita introduciendo tu fecha de nacimiento.</p>
